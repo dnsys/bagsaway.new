@@ -1,0 +1,19 @@
+.lang-switch-select
+  height: 40px
+  background: transparent
+  padding-left: 0
+  border: none
+  font-weight: $font-weight-semi-bold
+  &:hover
+    span.current
+      color: $base-color
+
+  &:after
+    height: 8px
+    width: 8px
+    margin-top: -7px
+    border-color: $base-color
+
+  span.current
+    color: #ffffff
+    transition: all .3s ease

@@ -1,0 +1,48 @@
+.section
+  position: relative
+  padding: 50px 0
+
+  &__inner
+    position: relative
+    height: 100%
+    z-index: 1
+
+  &__title
+    margin-bottom: 40px
+    &--dark
+      color: #191919
+
+  &__bg-block
+    background: rgba(33, 33, 33, 0.75)
+    padding: 15px 30px
+    color: #ffffff
+
+  &__search
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%
+    padding-left: 15px
+    padding-right: 15px
+
+  &--main
+    height: 694px
+    padding: 0
+    background:
+      size: cover
+      position: bottom center
+    &:after
+      content: ''
+      display: block
+      position: absolute
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+      background: #263238
+      opacity: .17
+    .container
+      position: relative
+
+  &--pricing
+    padding: 100px 0
