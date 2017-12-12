@@ -1,0 +1,27 @@
+.social-list
+  display: flex
+  flex-flow: row nowrap
+  li
+    margin: 0 7px
+    &:first-child
+      margin-left: 0
+    &:last-child
+      margin-right: 0
+  &__item
+    border-radius: 50%
+    display: inline-block
+    width: 30px
+    height: 30px
+    background: #ffffff
+    transition: all .3s ease
+    text-align: center
+    line-height: 33px
+    color: #ffffff
+    &--fb
+      background: #00A1E0
+    &--twitter
+      background: #F6A800
+    &--insta
+      background: #6BC04B
+    &:hover
+      border-radius: 6px

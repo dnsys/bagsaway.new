@@ -1,6 +1,6 @@
 .section
   position: relative
-  padding: 50px 0
+  padding: 60px 0
 
   &__inner
     position: relative
@@ -11,6 +11,25 @@
     margin-bottom: 40px
     &--dark
       color: #191919
+    &--light
+      color: #ffffff
+
+  &__description
+    font-weight: $font-weight-normal
+    line-height: 27px
+    font-size: 16px
+    &--light
+      color: #ffffff
+
+  &__column-image
+    background:
+      size: cover
+      position: center
+    width: 100%
+    height: 100%
+
+  &__column-text
+    padding: 50px 100px
 
   &__bg-block
     background: rgba(33, 33, 33, 0.75)
@@ -46,3 +65,33 @@
 
   &--pricing
     padding: 100px 0
+    background:
+      position: bottom
+      repeat: no-repeat
+      size: cover
+
+  &--security
+    background: #0078A7
+    padding: 0
+
+  &--reviews
+    background:
+      position: bottom
+      size: cover
+
+  &--faq
+    background:
+      size: cover
+      position: center
+
+  &--contacts
+    padding: 0
+
+  &--contacts  &__title
+    margin-bottom: 15px
+
+  &--contacts &__column
+    padding: 13%
+
+  &--contacts &__description
+    margin-top: 60px

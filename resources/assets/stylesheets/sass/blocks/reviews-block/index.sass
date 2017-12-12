@@ -1,0 +1,80 @@
+.reviews-block
+
+  &__item
+    padding: 0 15px
+
+  &__item-inner
+    padding: 24px
+    padding-bottom: 20px
+    border-radius: 3px
+    background-color: #ffffff
+    box-shadow: 0 12px 14px 0 rgba(130,156,169,0.15)
+
+  &__item-head
+    margin-bottom: 15px
+    +clearfix
+
+  &__item-photo
+    float: left
+    width: 42px
+    height: 42px
+    border-radius: 50%
+    overflow: hidden
+    background: grey
+
+  &__item-user-info
+    text-align: left
+    margin-left: 60px
+
+  &__item-name
+    font-size: 16px
+    color: #00A0DF
+
+  &__item-date
+    font-size: 12px
+    font-weight: 500
+    line-height: 2.17
+    color: #708a98
+
+  &__item-text
+    font-size: 12px
+    line-height: 1.83
+    text-align: left
+    color: #708a98
+
+  .slick-arrow
+    width: 42px
+    height: 42px
+    background-color: #ffffff
+    box-shadow: 0 12px 14px 0 rgba(130,156,169,0.15)
+    border: 0
+    border-radius: 50%
+    font-size: 0
+    position: absolute
+    top: 0
+    bottom: 0
+    margin: auto
+    z-index: 30
+    left: -40px
+    cursor: pointer
+    &:after
+      border: solid 2px #00A0DF
+      width: 4px
+      height: 4px
+      content: ""
+      border-right: 0
+      border-bottom: 0
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      margin: auto
+      bottom: 0
+      transform: rotate(-45deg)
+    &:focus
+      outline: none
+  .slick-next
+    left: auto
+    right: -40px
+    &:after
+      transform: rotate(135deg)

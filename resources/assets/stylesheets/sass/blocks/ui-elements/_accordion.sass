@@ -1,0 +1,49 @@
+.accordion
+
+  &__item
+    padding: 30px 0
+
+  &__heading
+    font-weight: $font-weight-normal
+    font-size: 20px
+    letter-spacing: -0.0031em
+    cursor: pointer
+    +clearfix
+    h4
+      margin-left: 60px
+      line-height: normal
+
+  &__plus-icon
+    position: relative
+    width: 30px
+    height: 30px
+    border: 2px solid $base-color
+    border-radius: 50%
+    span
+      display: inline-block
+      position: absolute
+      width: 3px
+      height: 18px
+      background: $base-color
+      border-radius: 6px
+      &:nth-child(1)
+        left: 12px
+        top: 4px
+      &:nth-child(2)
+        transform: rotate(90deg)
+        left: 12px
+        top: 4px
+
+  &__body
+    max-height: 0
+    overflow: hidden
+    transition: max-height 0.2s ease-out
+
+  &__body-content
+    padding: 10px 0 10px 60px
+    font-weight: $font-weight-normal
+    line-height: 27px
+    font-size: 16px
+
+  &--white &__heading, &__body
+    color: #ffffff
