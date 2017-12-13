@@ -118,12 +118,14 @@ class Application{
 
         $(document).on('click', 'a[href^="#"]', (e) => {
             e.preventDefault();
+            $(e.currentTarget).parents('.mobile-menu').slideUp();
+            $(e.currentTarget).parents('.mobile-menu').siblings('.container').find('.header__burger').removeClass('open');
             console.log('123');
             $(document).off("scroll", this._onScroll.bind(this));
             let target = e.currentTarget.hash;
             let $target = $(target);
             $('html, body').stop().animate({
-                'scrollTop': $target.offset().top+2
+                'scrollTop': $target.offset().top
             }, 500, () => {
                 window.location.hash = target;
                 this._onScroll();
@@ -139,7 +141,7 @@ class Application{
         $menuItems.each((index, elem) => {
             let currLink = $(elem);
             let refElement = $(currLink.attr("href"));
-            if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+            if (refElement.position().top-140 <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
                 currLink.addClass("active");
             }
             else{
@@ -152,7 +154,7 @@ class Application{
         $(document).on('click', '.header__burger', function () {
             let $this = $(this);
             $this.toggleClass('open');
-            $this.parents('.container').siblings('.mobile-menu').slideToggle();
+            $this.parents('.container').siblings('.mobile-menu').addClass('opened').slideToggle();
         });
     }
 
@@ -171,7 +173,11 @@ class Application{
 
     _mobileMenuActions(){
         let $mobileMenu = $('.mobile-menu');
-
+        let $burger = $('.header__burger');
+        $(window).on('scroll', function () {
+            $mobileMenu.slideUp();
+            $burger.removeClass('open');
+        });
     }
 }
 
