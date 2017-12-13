@@ -30,7 +30,7 @@ const config = {
 gulp.task("webpack", function(callback) {
     // run webpack
     process.env.NODE_ENV = 'production';
-    process.env.ASSET_PATH = './';
+    process.env.ASSET_PATH = '';
 
     let webpackConfig     = require('./webpack.config');
 

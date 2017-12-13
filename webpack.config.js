@@ -65,11 +65,26 @@ module.exports = {
                     {
                         loader: 'file-loader',
                         options: {
-                            name: 'images/[name].[ext]'
+                            name: 'images/[name].[ext]?[hash]',
+                            publicPath: '../'
                         }
                     }
                 ],
-                exclude: [path.resolve(__dirname, 'resources', 'assets', 'fonts')]
+                exclude: [
+                    path.resolve(__dirname, 'resources', 'assets', 'fonts'),
+                    path.resolve(__dirname, 'resources', 'assets', 'images')
+                ]
+            },{
+                test: /\.(jpe?g|png|gif|svg|ico)$/i,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: 'images/[name].[ext]?[hash]'
+                        }
+                    }
+                ],
+                include: [path.resolve(__dirname, 'resources', 'assets', 'images')]
             },
             {
                 test: /\.(woff|woff2|eot|ttf|svg)(\?.*$|$)/,

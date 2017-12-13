@@ -18,6 +18,7 @@ class Application{
         this._burgerClick();
         this._datePicker();
         this._timePicker();
+        this._mobileMenuActions();
     }
 
     _langSwitcher(){
@@ -103,47 +104,42 @@ class Application{
     }
 
     _stickyHeader(){
-        $(document).ready(function() {
-            let $header = $("header"),
-                $clone = $header.before($header.clone().addClass("clone"));
+        let $header = $("header"),
+            $clone = $header.before($header.clone().addClass("clone"));
 
-            $(window).on("scroll", function() {
-                let fromTop = $(window).scrollTop();
-                $("body").toggleClass("down", (fromTop > 400));
-            });
+        $(window).on("scroll", function() {
+            let fromTop = $(window).scrollTop();
+            $("body").toggleClass("down", (fromTop > 400));
         });
     }
 
     _triggerAnchors(){
-        $(document).on("scroll", this._onScroll());
-        $('a[href^="#"]').on('click', (e) => {
+        $(document).on("scroll", this._onScroll.bind(this));
+
+        $(document).on('click', 'a[href^="#"]', (e) => {
             e.preventDefault();
-            $(document).off("scroll");
-
-            $('a').each(function () {
-                $(this).removeClass('active');
-            });
-            $(this).addClass('active');
-
-            let target = this.hash,
-                menu = target;
+            console.log('123');
+            $(document).off("scroll", this._onScroll.bind(this));
+            let target = e.currentTarget.hash;
             let $target = $(target);
             $('html, body').stop().animate({
                 'scrollTop': $target.offset().top+2
-            }, 500, 'swing', function () {
+            }, 500, () => {
                 window.location.hash = target;
-                $(document).on("scroll", this._onScroll());
+                this._onScroll();
+                $(document).on("scroll", this._onScroll.bind(this));
             });
         });
     }
 
     _onScroll(event){
         let scrollPos = $(document).scrollTop();
-        $('.main-menu__item').each(function () {
-            let currLink = $(this);
+        let $menuItems = $('.main-menu__item');
+        $menuItems.removeClass("active");
+        $menuItems.each((index, elem) => {
+            let currLink = $(elem);
             let refElement = $(currLink.attr("href"));
             if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
-                $('.main-menu__item').removeClass("active");
                 currLink.addClass("active");
             }
             else{
@@ -153,9 +149,10 @@ class Application{
     }
 
     _burgerClick(){
-        $('.header__burger').on('click', function () {
+        $(document).on('click', '.header__burger', function () {
             let $this = $(this);
             $this.toggleClass('open');
+            $this.parents('.container').siblings('.mobile-menu').slideToggle();
         });
     }
 
@@ -170,6 +167,11 @@ class Application{
 
     _timePicker(){
         $('.custom-timepicker').wickedpicker();
+    }
+
+    _mobileMenuActions(){
+        let $mobileMenu = $('.mobile-menu');
+
     }
 }
 
