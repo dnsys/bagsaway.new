@@ -1,6 +1,9 @@
 .it-works
+  +clearfix
   &__item
     text-align: center
+    width: (100%/3)
+    float: left
 
   &__item-icon
 
@@ -13,3 +16,15 @@
     font-size: 16px
     font-weight: $font-weight-semi-bold
     margin-top: 10px
+
+  .slick-dots
+    bottom: -40px
+    li
+      button
+        &:before
+          font-size: 12px
+      &.slick-active
+        button
+          &:before
+            font-size: 16px
+            color: $base-color

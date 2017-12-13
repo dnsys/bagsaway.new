@@ -10,14 +10,23 @@
   border-bottom: 1px solid rgba(255, 255, 255, .5)
   box-shadow: inset -10px 30px 50px 10px rgba(0, 0, 0, .5)
 
+  &__logo
+    max-width: 100%
+
   &__menu
     margin-right: 30px
+    +media-992
+      display: none
 
   &__partner
     margin-right: 20px
+    +media-1200
+      display: none
 
   &__login
     margin-right: 20px
+    +media-480
+      display: none
 
   &.clone
     position: fixed
@@ -28,3 +37,50 @@
     transition: 0.4s top cubic-bezier(.3,.73,.3,.74)
     background: rgba(33, 33, 33, 1)
     box-shadow: none
+
+  &__burger
+    display: none
+    width: 27px
+    height: 20px
+    transform: rotate(0deg)
+    transition: .5s ease-in-out
+    cursor: pointer
+    +media-992
+      display: block
+    span
+      display: block
+      position: absolute
+      height: 3px
+      width: 100%
+      background: $base-color
+      border-radius: 9px
+      opacity: 1
+      left: 0
+      transform: rotate(0deg)
+      transition: .25s ease-in-out
+      &:nth-child(1)
+        top: 0px
+        transform-origin: left center
+
+      &:nth-child(2)
+        top: 9px
+        transform-origin: left center
+
+      &:nth-child(3)
+        bottom: 0
+        transform-origin: left center
+    &.open
+      span
+        &:nth-child(1)
+          transform: rotate(45deg)
+          top: -1px
+          left: 4px
+
+        &:nth-child(2)
+          width: 0
+          opacity: 0
+
+        &:nth-child(3)
+          transform: rotate(-45deg)
+          top: 18px
+          left: 4px

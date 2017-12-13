@@ -5,6 +5,10 @@
   &__sub
     padding: 30px 0
     border-bottom: 1px solid #757575
+    +media-576
+      display: flex
+      flex-flow: column-reverse
+      justify-content: stretch
 
   &__company-name
     line-height: 27px
@@ -47,3 +51,7 @@
         font-size: 14px
         color: #ffffff
         text-decoration: none
+
+  &__social
+    +media-576
+      margin-top: 15px

@@ -9,9 +9,11 @@ class Application{
         this._langSwitcher();
         this._searchComponent();
         this._sliderReviews();
+        this._howItWorksSlider();
         this._accordionAnimate();
         this._stickyHeader();
         this._triggerAnchors();
+        this._burgerClick();
     }
 
     _langSwitcher(){
@@ -26,6 +28,7 @@ class Application{
         $('.reviews-block').slick({
             slidesToShow: 3,
             slidesToScroll: 1,
+            dots: false,
             responsive: [
                 {
                     breakpoint: 992,
@@ -44,6 +47,38 @@ class Application{
                 },
             ]
         });
+    }
+
+    _howItWorksSlider(){
+        let $window = $(window);
+        let $carousel = $('.it-works');
+        let widthScreen = $window.width();
+
+        $window.ready(this._showSliderScreen(widthScreen, $carousel)).on('resize', () => {
+                let widthScreen = $window.width();
+                this._showSliderScreen(widthScreen, $carousel);
+            }
+        );
+
+    }
+
+    _showSliderScreen($widthScreen, $carousel){
+        console.log($widthScreen);
+
+        if ($widthScreen <= "890") {
+            if (!$carousel.hasClass('slick-initialized')) {
+                $carousel.slick({
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    dots: true
+                });
+            }
+
+        } else {
+            if ($carousel.hasClass('slick-initialized')) {
+                $carousel.slick('unslick');
+            }
+        }
     }
 
     _accordionAnimate(){
@@ -110,6 +145,13 @@ class Application{
             else{
                 currLink.removeClass("active");
             }
+        });
+    }
+
+    _burgerClick(){
+        $('.header__burger').on('click', function () {
+            let $this = $(this);
+            $this.toggleClass('open');
         });
     }
 }

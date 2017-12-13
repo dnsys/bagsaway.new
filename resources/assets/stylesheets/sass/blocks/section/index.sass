@@ -32,11 +32,19 @@
 
   &__column-text
     padding: 50px 100px
+    +media-640
+      padding: 50px 0
 
   &__bg-block
     background: rgba(33, 33, 33, 0.75)
     padding: 15px 30px
     color: #ffffff
+    h1
+      +media-768
+        font-size: 45px
+    h2
+      +media-768
+        font-size: 20px
 
   &__search
     position: absolute
@@ -94,6 +102,8 @@
 
   &--contacts &__column
     padding: 13%
+    +media-480
+      padding: 10% 5%
 
   &--contacts &__description
     margin-top: 60px
