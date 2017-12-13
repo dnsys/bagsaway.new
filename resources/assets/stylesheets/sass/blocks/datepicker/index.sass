@@ -1,0 +1,63 @@
+.custom-datepicker
+  font-family: 'Nunito', sans-serif
+  border-radius: 6px
+  margin-top: 5px
+  .ui-datepicker-header
+    background: none
+    border: none
+    +clearfix
+
+  .ui-datepicker-title
+    color: #626262
+    font-size: 16px
+    font-weight: $font-weight-semi-bold
+    line-height: 27px
+    float: left
+    margin-left: 10px
+    margin-right: 0
+  .ui-state-default
+    text-align: center
+    background: none
+    border: none
+    color: #626262
+    line-height: 24px
+    font-size: 14px
+    font-weight: $font-weight-semi-bold
+    padding: 0
+    transition: .3s ease
+    &:hover
+      background: rgba(0,0,0, .1)
+  .ui-datepicker-today
+    a
+      color: $base-color
+  th
+    color: #626262
+    font-weight: $font-weight-black
+    line-height: 24px
+    font-size: 14px
+
+  .ui-datepicker-prev, .ui-datepicker-next
+    text-align: center
+    cursor: pointer
+    &:hover
+      background: none
+    span
+      background: none
+    &:after
+      font-family: 'FontAwesome', sans-serif
+      font-size: 25px
+      color: $base-color
+      font-weight: normal
+
+  .ui-datepicker-prev
+    right: 30px
+    left: auto
+    &:after
+      content: '\f104'
+
+  .ui-datepicker-next
+    &:after
+      content: '\f105'
+
+  .ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next
+    top: 0

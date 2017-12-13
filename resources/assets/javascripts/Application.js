@@ -1,8 +1,10 @@
 //VENDORS
 window.$ = window.jQuery = require('jquery');
+require('jquery-ui/ui/widgets/datepicker');
 require('bootstrap-sass');
 require('jquery-nice-select');
 require('slick-carousel');
+require('wickedpicker');
 
 class Application{
     constructor(){
@@ -14,6 +16,8 @@ class Application{
         this._stickyHeader();
         this._triggerAnchors();
         this._burgerClick();
+        this._datePicker();
+        this._timePicker();
     }
 
     _langSwitcher(){
@@ -153,6 +157,19 @@ class Application{
             let $this = $(this);
             $this.toggleClass('open');
         });
+    }
+
+    _datePicker(){
+        $('.date-picker').datepicker({
+            showOtherMonths: true,
+            beforeShow: function(input, inst) {
+                $('#ui-datepicker-div').addClass('custom-datepicker');
+            }
+        });
+    }
+
+    _timePicker(){
+        $('.custom-timepicker').wickedpicker();
     }
 }
 

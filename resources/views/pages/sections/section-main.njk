@@ -1,7 +1,7 @@
 <section class="section section--main" style="background-image: url('${require('/assets/images/main-bg.jpg')}');" id="mainSection">
     <div class="section__inner">
         <div class="container h-100">
-            <div class="d-flex flex-column justify-content-center h-100">
+            <div class="d-flex flex-column justify-content-lg-center h-100">
                 <div class="row">
                     <div class="col">
                         <div class="section__bg-block d-inline-block">
@@ -21,32 +21,29 @@
             </div>
             <div class="section__search">
                 <div class="search-component">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <select name="" id="" class="search-select wide">
-                                <option value="New York">New York</option>
-                                <option value="Los Angeles">Los Angeles</option>
-                            </select>
+                    <form action="">
+                        <div class="row">
+                            <div class="col-12 col-lg-3 mb-2 mb-lg-0">
+                                <select name="" id="" class="search-select wide">
+                                    <option value="New York">New York</option>
+                                    <option value="Los Angeles">Los Angeles</option>
+                                </select>
+                            </div>
+                            <div class="col-6 col-lg-2 pr-1 pr-lg-3">
+                                <input type="text" id="datepicker" class="date-picker wide" placeholder="Drop-Off Date">
+                            </div>
+                            <div class="col-6 col-lg-2 pl-1 pl-lg-3">
+                                <input type="text" class="custom-timepicker wide" placeholder="Drop-Off Time">
+                            </div>
+                            <div class="col-12 col-lg-2 mt-2 mt-lg-0">
+                                <input type="number" id="caseCounter" class="case-counter" style="width: 100%">
+                                <label for="caseCounter"></label>
+                            </div>
+                            <div class="col-12 col-lg-3 mt-2 mt-lg-0">
+                                <button type="submit" class="base-button base-button--filled base-button--full-width">Find Drop-off Location</button>
+                            </div>
                         </div>
-                        <div class="col-md-2">
-                            <select name="" id="" class="search-select wide">
-                                <option value="New York">New York</option>
-                                <option value="Los Angeles">Los Angeles</option>
-                            </select>
-                        </div>
-                        <div class="col-md-2">
-                            <select name="" id="" class="search-select wide">
-                                <option value="New York">New York</option>
-                                <option value="Los Angeles">Los Angeles</option>
-                            </select>
-                        </div>
-                        <div class="col-md-2">
-                            <input type="number" class="number-input" style="width: 100%">
-                        </div>
-                        <div class="col-md-3">
-                            <a href="#" class="base-button base-button--filled base-button--full-width">Find Drop-off Location</a>
-                        </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
