@@ -168,7 +168,9 @@ class Application{
     }
 
     _timePicker(){
-        $('.custom-timepicker').wickedpicker();
+        $('.custom-timepicker').on('focus', function () {
+            $(this).wickedpicker();
+        });
     }
 
     _mobileMenuActions(){
